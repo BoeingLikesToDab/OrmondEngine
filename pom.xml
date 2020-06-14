@@ -1,13 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.cianormond</groupId>
-  <artifactId>OrmondEngine</artifactId>
-  <version>0.0.1</version>
-  <name>OrmondEngine</name>
-  <description>OrmondEngine</description>
-  
-  <dependencies>
-  	<dependency>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.cianormond</groupId>
+	<artifactId>OrmondEngine</artifactId>
+	<version>0.0.3</version>
+	<name>OrmondEngine</name>
+	<description>OrmondEngine builds. There is no specific time between each build, and x.x.x builds may not be as stable/may not function as well as x.x builds.</description>
+	<properties>
+		<maven.compiler.source>1.7</maven.compiler.source>
+		<maven.compiler.target>1.7</maven.compiler.target>
+	</properties>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/BoeingLikesToDab/OrmondEngine</url>
+		</repository>
+	</distributionManagement>
+	<dependencies>
+		<dependency>
 			<groupId>org.lwjgl</groupId>
 			<artifactId>lwjgl</artifactId>
 			<version>3.2.3</version>

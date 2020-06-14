@@ -1,3 +1,5 @@
+package OrmondEngine;
+
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.stb.STBImage.*;
 import org.lwjgl.stb.STBImage;
@@ -10,13 +12,13 @@ import javax.imageio.ImageIO;
 
 import org.lwjgl.BufferUtils;
 
-public class Texture {
+public class OrmondTextureLoader {
 
     private int id;
     private int width;
     private int height;
 
-    public Texture(String filename) {
+    public OrmondTextureLoader(String filename) {
 
         IntBuffer width = BufferUtils.createIntBuffer(1);
         IntBuffer height = BufferUtils.createIntBuffer(1);
@@ -34,10 +36,15 @@ public class Texture {
         glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, this.width, this.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-        stbi_image_free(data);
+        try {
+            stbi_image_free(data);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            System.out.println("Well that didn't work...");
+        }
     }
 
-    //public void bind() {
-       // glBindTexture(GL_TEXTURE_2D, id);
-    //}
+    public void bind() {
+        glBindTexture(GL_TEXTURE_2D, id);
+    }
 }
