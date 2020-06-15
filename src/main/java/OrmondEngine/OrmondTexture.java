@@ -12,19 +12,19 @@ import javax.imageio.ImageIO;
 
 import org.lwjgl.BufferUtils;
 
-public class OrmondTextureLoader {
+public class OrmondTexture {
 
     private int id;
     private int width;
     private int height;
 
-    public OrmondTextureLoader(String filename) {
+    public OrmondTexture(String filename) {
 
         IntBuffer width = BufferUtils.createIntBuffer(1);
         IntBuffer height = BufferUtils.createIntBuffer(1);
         IntBuffer comp = BufferUtils.createIntBuffer(1);
 
-        ByteBuffer data = stbi_load("resources/" + filename, width, height, comp, 4);
+        ByteBuffer data = stbi_load("resources\\" + filename, width, height, comp, 4);
 
         id = glGenTextures();
         this.width = width.get();
