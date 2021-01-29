@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.cianormond</groupId>
-	<artifactId>OrmondEngine</artifactId>
-	<version>0.0.4.1</version>
+	<artifactId>ormondengine</artifactId>
+	<version>0.0.5</version>
 	<name>OrmondEngine</name>
 	<description>OrmondEngine builds. There is no specific time between each build, and x.x.x builds may not be as stable/may not function as well as x.x builds.</description>
 	<properties>
@@ -13,7 +13,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/BoeingLikesToDab/OrmondEngine</url>
+			<url>https://maven.pkg.github.com/wiggleforlife/OrmondEngine</url>
 		</repository>
 	</distributionManagement>
 	<dependencies>
