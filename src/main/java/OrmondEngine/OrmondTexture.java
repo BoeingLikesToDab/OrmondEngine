@@ -25,11 +25,12 @@ public class OrmondTexture {
         IntBuffer comp = BufferUtils.createIntBuffer(1);
 
         ByteBuffer data = stbi_load("./resources/" + filename, width, height, comp, 4);
-        System.out.println(data != null);
 
         if(data == null) {
             throw new IOException(STBImage.stbi_failure_reason());
         }
+        
+        System.out.println("Texture file loaded.");
 
         id = glGenTextures();
         this.width = width.get();
@@ -47,6 +48,7 @@ public class OrmondTexture {
             e.printStackTrace();
             System.out.println("Well that didn't work...");
         }
+        System.out.println("Texture created.");
     }
 
     public void bind() {
